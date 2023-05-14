@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Delegates\Dele
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async", "Async\Async.csproj", "{7E422FD7-BD4C-4440-8288-500F8E44FA55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternMatching", "PatternMatching\PatternMatching.csproj", "{83720094-648A-4314-B31F-135DB28259D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{7E422FD7-BD4C-4440-8288-500F8E44FA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E422FD7-BD4C-4440-8288-500F8E44FA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E422FD7-BD4C-4440-8288-500F8E44FA55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83720094-648A-4314-B31F-135DB28259D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83720094-648A-4314-B31F-135DB28259D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83720094-648A-4314-B31F-135DB28259D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83720094-648A-4314-B31F-135DB28259D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
