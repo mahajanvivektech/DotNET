@@ -69,7 +69,7 @@ NullCheckWithTypePattern();
 
 #region Type pattern in Switch
 
-WriteHeaderLine("Type Patterns in `Switch` statement");
+WriteHeaderLine("Type Patterns in Switch statement");
 
 void TypePatternInSwitch()
 {
@@ -96,6 +96,67 @@ void TypePatternInSwitch()
 }
 
 TypePatternInSwitch();
+
+void SwitchWithWhen()
+{
+    object o = new Hero("Wade", "Wilson", "Deadpool", HeroType.FailedExperiment, false);
+    switch (o)
+    {
+        case Hero h when h.Type == HeroType.FailedExperiment:
+            Console.WriteLine($"o Hero {h.HeroName} and became it because of an failed experiment");
+            break;
+        case Hero h:
+            Console.WriteLine($"o is Hero {h.HeroName}, NOT because of a failed experiment");
+            break;
+        default:
+            throw new InvalidOperationException("Hmm, this should never happen...");
+    }
+
+    var type = "fish";
+    switch (type)
+    {
+        case "Person":
+            Console.WriteLine("We have a Person");
+            break;
+        case "Hero":
+            Console.WriteLine("We have a Hero");
+            break;
+        case var t when t.Trim().Length > 0:
+            Console.WriteLine($"We have the special type {t}");
+            break;
+        default:
+            throw new InvalidOperationException("type must not be empty");
+    }
+}
+
+SwitchWithWhen();
+
+void SwitchExpression()
+{
+    object o = new Hero("Wade", "Wilson", "Deadpool", HeroType.FailedExperiment, false);
+    var result = o switch
+    {
+        // type pattern, var pattern, property pattern
+        Hero { HeroName: var n, CanFly: true } => $"Hero {n} that can fly",
+        Hero h => $"Hero {h.HeroName} {h.CanFly}",
+        Person p => $"Person {p.LastName}",
+        // discard pattern
+        _ => throw new InvalidOperationException("What is that!!!")
+    };
+    Console.WriteLine(result);
+
+    // switch with when
+    var output = o switch
+    {
+        Hero h when h.CanFly => 2,
+        Hero => 1,
+        Person => 0,
+        _ => throw new InvalidOperationException()
+    };
+    Console.WriteLine(output);
+}
+
+SwitchExpression();
 
 #endregion
 
